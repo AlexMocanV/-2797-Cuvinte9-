@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cstring>
+std::string c;
+std::string nou;
+std::string bun;
+int main()
+{
+    int maxi=-1;
+    getline(std::cin,c);
+    for(int i=0;i<c.length();i++)
+    {
+        nou.clear();
+        if(c[i]-'0'>=0&&c[i]-'0'<=9)
+        {
+            int pc=c[i]-'0';
+            while(c[i]-'0'>=0&&c[i]-'0'<=9)
+            {
+                nou+=c[i];
+                i++;
+            }
+            if(maxi<pc){
+                maxi=pc;
+                bun=nou;
+            }
+        }
+    }
+    if(maxi!=-1)
+    std::cout<<bun;
+    else std::cout<<"nu exista";
+    return 0;
+}
+//if(c[i]=='a'||c[i]=='o'||c[i]=='u'||c[i]=='e'||c[i]=='i'||c[i]=='A'||c[i]=='O'||c[i]=='U'||c[i]=='E'||c[i]=='I')
+            
